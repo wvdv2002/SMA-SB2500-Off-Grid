@@ -1,9 +1,11 @@
 # SMA-SB2500-Off-Grid
 The grid tie solar inverter SMA Sunny Boy SB2500 is a beautifully designed transformer isolated grid tie inverter. It is probably possible to convert it to an off grid batter inverter by reprogramming or redesigning the logic  board
 
+Checkout my [hackaday.io](https://hackaday.io/project/183357-grid-tie-inverter-sma-sunny-boy-sb2500-openlogic) page for pictures of the inside of the inverter and a project log.
+
 
 ![image](images/blockdiagram.png)
-
+The block diagram from the SB2500 manual.
 
 The inverter has an H-bridge with 4 IGBTs (SKW30NF60) driven by IR2113S mosfet drivers. These drive an 2mH inductor + 4.7uF capacitor step down converter and then a isolation transformer 153V primary/230V secondary 9.6A. On the grid side are three safety relais, EMC filtering and a measurement transformer for the logic board the measure the grid voltages.
 All the logic is powered from the DC side, several voltages are generated using a switching power converter which generates all the drive voltages for the IGBT drivers and the logi board.
@@ -11,7 +13,7 @@ The logic board contains an SAFC808 microcontroller, probably with an interchang
 
 The layout is drawn in Kicad. 
 
-Exported images (probably not up to date) are in the images folder. 
+Exported kicad images (probably not up to date) are in the images folder. 
 
 The src folder can contain the Freescale DSP code.
 
@@ -44,9 +46,6 @@ The datasheets folder contains datasheets of most of the electronic parts in the
 * [STM based grid tie inverter 2 repo](https://github.com/fotherja/Grid_Tie_Inverter_2)
 * [TIVA-C based grid tie inverter](https://github.com/srpoyrek/NIVAS)
 
-
-
-Checkout my [hackaday.io](https://hackaday.io/project/183357-grid-tie-inverter-sma-sunny-boy-sb2500-openlogic) page for pictures of the inside of the inverter and a project log.
 
 
 
