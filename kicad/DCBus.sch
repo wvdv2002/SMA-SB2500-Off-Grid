@@ -1,0 +1,629 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE3E1
+P 9850 3500
+AR Path="/61DAE3E1" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE3E1" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE3E1" Ref="C?"  Part="1" 
+F 0 "C?" H 10028 3546 50  0000 L CNN
+F 1 "CAP" H 10028 3455 50  0000 L CNN
+F 2 "" H 9850 3500 50  0001 C CNN
+F 3 "~" H 9850 3500 50  0001 C CNN
+	1    9850 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE3E7
+P 9250 3500
+AR Path="/61DAE3E7" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE3E7" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE3E7" Ref="C?"  Part="1" 
+F 0 "C?" H 9428 3546 50  0000 L CNN
+F 1 "CAP" H 9428 3455 50  0000 L CNN
+F 2 "" H 9250 3500 50  0001 C CNN
+F 3 "~" H 9250 3500 50  0001 C CNN
+	1    9250 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE3ED
+P 8750 3500
+AR Path="/61DAE3ED" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE3ED" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE3ED" Ref="C?"  Part="1" 
+F 0 "C?" H 8928 3546 50  0000 L CNN
+F 1 "CAP" H 8928 3455 50  0000 L CNN
+F 2 "" H 8750 3500 50  0001 C CNN
+F 3 "~" H 8750 3500 50  0001 C CNN
+	1    8750 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE3F3
+P 8750 4100
+AR Path="/61DAE3F3" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE3F3" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE3F3" Ref="C?"  Part="1" 
+F 0 "C?" H 8928 4146 50  0000 L CNN
+F 1 "1000uf/315v" H 8928 4055 50  0000 L CNN
+F 2 "" H 8750 4100 50  0001 C CNN
+F 3 "~" H 8750 4100 50  0001 C CNN
+	1    8750 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE3F9
+P 9250 4100
+AR Path="/61DAE3F9" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE3F9" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE3F9" Ref="C?"  Part="1" 
+F 0 "C?" H 9428 4146 50  0000 L CNN
+F 1 "CAP" H 9428 4055 50  0000 L CNN
+F 2 "" H 9250 4100 50  0001 C CNN
+F 3 "~" H 9250 4100 50  0001 C CNN
+	1    9250 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE3FF
+P 9850 4100
+AR Path="/61DAE3FF" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE3FF" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE3FF" Ref="C?"  Part="1" 
+F 0 "C?" H 10028 4146 50  0000 L CNN
+F 1 "CAP" H 10028 4055 50  0000 L CNN
+F 2 "" H 9850 4100 50  0001 C CNN
+F 3 "~" H 9850 4100 50  0001 C CNN
+	1    9850 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE405
+P 7650 3500
+AR Path="/61DAE405" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE405" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE405" Ref="C?"  Part="1" 
+F 0 "C?" H 7828 3546 50  0000 L CNN
+F 1 "1000uf/315v" H 7828 3455 50  0000 L CNN
+F 2 "" H 7650 3500 50  0001 C CNN
+F 3 "~" H 7650 3500 50  0001 C CNN
+	1    7650 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE40B
+P 7150 3500
+AR Path="/61DAE40B" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE40B" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE40B" Ref="C?"  Part="1" 
+F 0 "C?" H 7328 3546 50  0000 L CNN
+F 1 "1000uf/315v" H 7328 3455 50  0000 L CNN
+F 2 "" H 7150 3500 50  0001 C CNN
+F 3 "~" H 7150 3500 50  0001 C CNN
+	1    7150 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE411
+P 7150 4100
+AR Path="/61DAE411" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE411" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE411" Ref="C?"  Part="1" 
+F 0 "C?" H 7328 4146 50  0000 L CNN
+F 1 "1000uf/315v" H 7328 4055 50  0000 L CNN
+F 2 "" H 7150 4100 50  0001 C CNN
+F 3 "~" H 7150 4100 50  0001 C CNN
+	1    7150 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAE417
+P 7650 4100
+AR Path="/61DAE417" Ref="C?"  Part="1" 
+AR Path="/61D74676/61DAE417" Ref="C?"  Part="1" 
+AR Path="/61DA1008/61DAE417" Ref="C?"  Part="1" 
+F 0 "C?" H 7828 4146 50  0000 L CNN
+F 1 "1000uf/315v" H 7828 4055 50  0000 L CNN
+F 2 "" H 7650 4100 50  0001 C CNN
+F 3 "~" H 7650 4100 50  0001 C CNN
+	1    7650 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9850 3750 9850 3800
+Wire Wire Line
+	8750 3850 8750 3800
+Wire Wire Line
+	9250 3850 9250 3800
+Wire Wire Line
+	8750 3800 9250 3800
+Connection ~ 8750 3800
+Wire Wire Line
+	8750 3800 8750 3750
+Connection ~ 9250 3800
+Wire Wire Line
+	9250 3800 9250 3750
+Wire Wire Line
+	9850 3800 9250 3800
+Connection ~ 9850 3800
+Wire Wire Line
+	9850 3800 9850 3850
+Wire Wire Line
+	7150 3750 7150 3800
+Wire Wire Line
+	7650 3850 7650 3800
+Wire Wire Line
+	7150 3800 7650 3800
+Connection ~ 7150 3800
+Wire Wire Line
+	7150 3800 7150 3850
+Connection ~ 7650 3800
+Wire Wire Line
+	7650 3800 7650 3750
+Wire Wire Line
+	7150 3250 7650 3250
+Connection ~ 7650 3250
+Wire Wire Line
+	8750 3250 9250 3250
+Connection ~ 9250 3250
+Wire Wire Line
+	9250 3250 9850 3250
+Wire Wire Line
+	7650 3250 8750 3250
+Connection ~ 8750 3250
+Connection ~ 7650 4350
+Wire Wire Line
+	7650 4350 7150 4350
+Connection ~ 8750 4350
+Wire Wire Line
+	8750 4350 7650 4350
+Connection ~ 9250 4350
+Wire Wire Line
+	9250 4350 8750 4350
+Wire Wire Line
+	9250 4350 9850 4350
+$Comp
+L power:-VDC #PWR?
+U 1 1 61DAE43D
+P 7150 4350
+AR Path="/61DAE43D" Ref="#PWR?"  Part="1" 
+AR Path="/61D74676/61DAE43D" Ref="#PWR?"  Part="1" 
+AR Path="/61DA1008/61DAE43D" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7150 4250 50  0001 C CNN
+F 1 "-VDC" H 7150 4625 50  0000 C CNN
+F 2 "" H 7150 4350 50  0001 C CNN
+F 3 "" H 7150 4350 50  0001 C CNN
+	1    7150 4350
+	-1   0    0    1   
+$EndComp
+Connection ~ 7150 4350
+$Comp
+L power:+VDC #PWR?
+U 1 1 61DAE444
+P 7150 3250
+AR Path="/61DAE444" Ref="#PWR?"  Part="1" 
+AR Path="/61D74676/61DAE444" Ref="#PWR?"  Part="1" 
+AR Path="/61DA1008/61DAE444" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7150 3150 50  0001 C CNN
+F 1 "+VDC" H 7150 3525 50  0000 C CNN
+F 2 "" H 7150 3250 50  0001 C CNN
+F 3 "" H 7150 3250 50  0001 C CNN
+	1    7150 3250
+	1    0    0    -1  
+$EndComp
+Connection ~ 7150 3250
+$Comp
+L power:PRI_MID #PWR?
+U 1 1 61DAE44B
+P 10000 3800
+AR Path="/61DAE44B" Ref="#PWR?"  Part="1" 
+AR Path="/61D74676/61DAE44B" Ref="#PWR?"  Part="1" 
+AR Path="/61DA1008/61DAE44B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 10000 3650 50  0001 C CNN
+F 1 "PRI_MID" V 10015 3928 50  0000 L CNN
+F 2 "" H 10000 3800 50  0001 C CNN
+F 3 "" H 10000 3800 50  0001 C CNN
+	1    10000 3800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10000 3800 9850 3800
+$Comp
+L Device:R R?
+U 1 1 61DAE452
+P 10600 3250
+AR Path="/61DAE452" Ref="R?"  Part="1" 
+AR Path="/61D74676/61DAE452" Ref="R?"  Part="1" 
+AR Path="/61DA1008/61DAE452" Ref="R?"  Part="1" 
+F 0 "R?" H 10670 3296 50  0000 L CNN
+F 1 "120k" H 10670 3205 50  0000 L CNN
+F 2 "" V 10530 3250 50  0001 C CNN
+F 3 "~" H 10600 3250 50  0001 C CNN
+	1    10600 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DAE458
+P 10600 3600
+AR Path="/61DAE458" Ref="R?"  Part="1" 
+AR Path="/61D74676/61DAE458" Ref="R?"  Part="1" 
+AR Path="/61DA1008/61DAE458" Ref="R?"  Part="1" 
+F 0 "R?" H 10670 3646 50  0000 L CNN
+F 1 "120k" H 10670 3555 50  0000 L CNN
+F 2 "" V 10530 3600 50  0001 C CNN
+F 3 "~" H 10600 3600 50  0001 C CNN
+	1    10600 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DAE45E
+P 10600 3950
+AR Path="/61DAE45E" Ref="R?"  Part="1" 
+AR Path="/61D74676/61DAE45E" Ref="R?"  Part="1" 
+AR Path="/61DA1008/61DAE45E" Ref="R?"  Part="1" 
+F 0 "R?" H 10670 3996 50  0000 L CNN
+F 1 "120k" H 10670 3905 50  0000 L CNN
+F 2 "" V 10530 3950 50  0001 C CNN
+F 3 "~" H 10600 3950 50  0001 C CNN
+	1    10600 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DAE464
+P 10600 4300
+AR Path="/61DAE464" Ref="R?"  Part="1" 
+AR Path="/61D74676/61DAE464" Ref="R?"  Part="1" 
+AR Path="/61DA1008/61DAE464" Ref="R?"  Part="1" 
+F 0 "R?" H 10670 4346 50  0000 L CNN
+F 1 "120k" H 10670 4255 50  0000 L CNN
+F 2 "" V 10530 4300 50  0001 C CNN
+F 3 "~" H 10600 4300 50  0001 C CNN
+	1    10600 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DAE46A
+P 10600 4650
+AR Path="/61DAE46A" Ref="R?"  Part="1" 
+AR Path="/61D74676/61DAE46A" Ref="R?"  Part="1" 
+AR Path="/61DA1008/61DAE46A" Ref="R?"  Part="1" 
+F 0 "R?" H 10670 4696 50  0000 L CNN
+F 1 "120k" H 10670 4605 50  0000 L CNN
+F 2 "" V 10530 4650 50  0001 C CNN
+F 3 "~" H 10600 4650 50  0001 C CNN
+	1    10600 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61DAE470
+P 10600 2900
+AR Path="/61DAE470" Ref="R?"  Part="1" 
+AR Path="/61D74676/61DAE470" Ref="R?"  Part="1" 
+AR Path="/61DA1008/61DAE470" Ref="R?"  Part="1" 
+F 0 "R?" H 10670 2946 50  0000 L CNN
+F 1 "120k" H 10670 2855 50  0000 L CNN
+F 2 "" V 10530 2900 50  0001 C CNN
+F 3 "~" H 10600 2900 50  0001 C CNN
+	1    10600 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 3400 10600 3450
+Wire Wire Line
+	10600 3750 10600 3800
+Wire Wire Line
+	10600 4100 10600 4150
+Wire Wire Line
+	10600 4450 10600 4500
+Wire Wire Line
+	10600 3050 10600 3100
+Wire Wire Line
+	10600 2750 9850 2750
+Wire Wire Line
+	9850 2750 9850 3250
+Connection ~ 9850 3250
+Wire Wire Line
+	9850 4350 9850 4800
+Wire Wire Line
+	9850 4800 10600 4800
+Connection ~ 9850 4350
+$Comp
+L power:Earth #PWR?
+U 1 1 61DAEC13
+P 5300 3650
+F 0 "#PWR?" H 5300 3400 50  0001 C CNN
+F 1 "Earth" H 5300 3500 50  0001 C CNN
+F 2 "" H 5300 3650 50  0001 C CNN
+F 3 "~" H 5300 3650 50  0001 C CNN
+	1    5300 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAF2EB
+P 5600 3350
+F 0 "C?" H 5778 3396 50  0000 L CNN
+F 1 "0.22u" H 5778 3305 50  0000 L CNN
+F 2 "" H 5600 3350 50  0001 C CNN
+F 3 "~" H 5600 3350 50  0001 C CNN
+	1    5600 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DAFE97
+P 5600 3950
+F 0 "C?" H 5778 3996 50  0000 L CNN
+F 1 "0.22u" H 5778 3905 50  0000 L CNN
+F 2 "" H 5600 3950 50  0001 C CNN
+F 3 "~" H 5600 3950 50  0001 C CNN
+	1    5600 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DB020E
+P 5050 3350
+F 0 "C?" H 5228 3396 50  0000 L CNN
+F 1 "0.33u" H 5228 3305 50  0000 L CNN
+F 2 "" H 5050 3350 50  0001 C CNN
+F 3 "~" H 5050 3350 50  0001 C CNN
+	1    5050 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:CAP C?
+U 1 1 61DB0643
+P 5050 3950
+F 0 "C?" H 5228 3996 50  0000 L CNN
+F 1 "0.33u" H 5228 3905 50  0000 L CNN
+F 2 "" H 5050 3950 50  0001 C CNN
+F 3 "~" H 5050 3950 50  0001 C CNN
+	1    5050 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+VDC #PWR?
+U 1 1 61DB099C
+P 5050 2950
+AR Path="/61DB099C" Ref="#PWR?"  Part="1" 
+AR Path="/61D74676/61DB099C" Ref="#PWR?"  Part="1" 
+AR Path="/61DA1008/61DB099C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5050 2850 50  0001 C CNN
+F 1 "+VDC" H 5050 3225 50  0000 C CNN
+F 2 "" H 5050 2950 50  0001 C CNN
+F 3 "" H 5050 2950 50  0001 C CNN
+	1    5050 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-VDC #PWR?
+U 1 1 61DB0F0E
+P 5050 4350
+AR Path="/61DB0F0E" Ref="#PWR?"  Part="1" 
+AR Path="/61D74676/61DB0F0E" Ref="#PWR?"  Part="1" 
+AR Path="/61DA1008/61DB0F0E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5050 4250 50  0001 C CNN
+F 1 "-VDC" H 5050 4625 50  0000 C CNN
+F 2 "" H 5050 4350 50  0001 C CNN
+F 3 "" H 5050 4350 50  0001 C CNN
+	1    5050 4350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5050 4350 5050 4300
+Wire Wire Line
+	5050 3100 5050 3050
+Wire Wire Line
+	5050 3700 5050 3650
+Wire Wire Line
+	5050 3050 5600 3050
+Wire Wire Line
+	5600 3050 5600 3100
+Connection ~ 5050 3050
+Wire Wire Line
+	5050 3050 5050 2950
+Wire Wire Line
+	5050 3650 5300 3650
+Wire Wire Line
+	5600 3650 5600 3600
+Connection ~ 5050 3650
+Wire Wire Line
+	5050 3650 5050 3600
+Connection ~ 5300 3650
+Wire Wire Line
+	5300 3650 5600 3650
+Wire Wire Line
+	5600 3700 5600 3650
+Connection ~ 5600 3650
+Wire Wire Line
+	5050 4200 5600 4200
+Connection ~ 5050 4200
+$Comp
+L pspice:CAP C?
+U 1 1 61DB3D84
+P 6600 3850
+F 0 "C?" H 6778 3896 50  0000 L CNN
+F 1 "0.33u" H 6778 3805 50  0000 L CNN
+F 2 "" H 6600 3850 50  0001 C CNN
+F 3 "~" H 6600 3850 50  0001 C CNN
+	1    6600 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 4350 6600 4350
+Wire Wire Line
+	6600 4350 6600 4100
+Wire Wire Line
+	6600 3600 6600 3250
+Wire Wire Line
+	6600 3250 7150 3250
+$Comp
+L Device:Varistor RV?
+U 1 1 61DB696A
+P 4400 3100
+F 0 "RV?" H 4503 3146 50  0000 L CNN
+F 1 "Varistor" H 4503 3055 50  0000 L CNN
+F 2 "" V 4330 3100 50  0001 C CNN
+F 3 "~" H 4400 3100 50  0001 C CNN
+	1    4400 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Varistor RV?
+U 1 1 61DB746F
+P 4400 3800
+F 0 "RV?" H 4503 3846 50  0000 L CNN
+F 1 "Varistor" H 4503 3755 50  0000 L CNN
+F 2 "" V 4330 3800 50  0001 C CNN
+F 3 "~" H 4400 3800 50  0001 C CNN
+	1    4400 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Thermistor_PTC TH?
+U 1 1 61DB7D0F
+P 4400 4150
+F 0 "TH?" H 4498 4196 50  0000 L CNN
+F 1 "Thermistor_PTC" H 4498 4105 50  0000 L CNN
+F 2 "" H 4450 3950 50  0001 L CNN
+F 3 "~" H 4400 4150 50  0001 C CNN
+	1    4400 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Thermistor_PTC TH?
+U 1 1 61DB86F3
+P 4400 3450
+F 0 "TH?" H 4498 3496 50  0000 L CNN
+F 1 "Thermistor_PTC" H 4498 3405 50  0000 L CNN
+F 2 "" H 4450 3250 50  0001 L CNN
+F 3 "~" H 4400 3450 50  0001 C CNN
+	1    4400 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 4300 5050 4300
+Connection ~ 5050 4300
+Wire Wire Line
+	5050 4300 5050 4200
+Wire Wire Line
+	4400 4000 4400 3950
+Wire Wire Line
+	4400 3650 4400 3600
+Wire Wire Line
+	4400 3300 4400 3250
+Wire Wire Line
+	4400 2950 5050 2950
+Connection ~ 5050 2950
+Wire Wire Line
+	4400 3650 5050 3650
+Connection ~ 4400 3650
+$Comp
+L power:+VDC #PWR?
+U 1 1 61DBFD9D
+P 3050 3350
+AR Path="/61DBFD9D" Ref="#PWR?"  Part="1" 
+AR Path="/61D74676/61DBFD9D" Ref="#PWR?"  Part="1" 
+AR Path="/61DA1008/61DBFD9D" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3050 3250 50  0001 C CNN
+F 1 "+VDC" H 3050 3625 50  0000 C CNN
+F 2 "" H 3050 3350 50  0001 C CNN
+F 3 "" H 3050 3350 50  0001 C CNN
+	1    3050 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:-VDC #PWR?
+U 1 1 61DC00D3
+P 3050 3750
+AR Path="/61DC00D3" Ref="#PWR?"  Part="1" 
+AR Path="/61D74676/61DC00D3" Ref="#PWR?"  Part="1" 
+AR Path="/61DA1008/61DC00D3" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3050 3650 50  0001 C CNN
+F 1 "-VDC" H 3050 4025 50  0000 C CNN
+F 2 "" H 3050 3750 50  0001 C CNN
+F 3 "" H 3050 3750 50  0001 C CNN
+	1    3050 3750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:EMI_Filter_CommonMode FL?
+U 1 1 61DC102E
+P 2700 3600
+F 0 "FL?" H 2700 3881 50  0000 C CNN
+F 1 "EMI_Filter_CommonMode" H 2700 3790 50  0000 C CNN
+F 2 "" H 2700 3640 50  0001 C CNN
+F 3 "~" H 2700 3640 50  0001 C CNN
+	1    2700 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 3500 3050 3500
+Wire Wire Line
+	3050 3500 3050 3350
+Wire Wire Line
+	2900 3700 3050 3700
+Wire Wire Line
+	3050 3700 3050 3750
+$Comp
+L pspice:CAP C?
+U 1 1 61DC4FE1
+P 2000 3600
+F 0 "C?" H 2178 3646 50  0000 L CNN
+F 1 "1.5u" H 2178 3555 50  0000 L CNN
+F 2 "" H 2000 3600 50  0001 C CNN
+F 3 "~" H 2000 3600 50  0001 C CNN
+	1    2000 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 3900 2500 3700
+Wire Wire Line
+	2500 3350 2500 3500
+Wire Wire Line
+	2000 3850 2000 3900
+Text GLabel 1750 3350 0    50   Input ~ 0
+Solar+
+Wire Wire Line
+	1750 3350 2000 3350
+Connection ~ 2000 3350
+Wire Wire Line
+	2000 3350 2500 3350
+Text GLabel 1750 3900 0    50   Input ~ 0
+Solar-
+Wire Wire Line
+	1750 3900 2000 3900
+Connection ~ 2000 3900
+Wire Wire Line
+	2000 3900 2500 3900
+$EndSCHEMATC

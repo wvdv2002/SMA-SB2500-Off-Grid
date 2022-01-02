@@ -1,0 +1,350 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR?
+U 1 1 61CF06A5
+P 2700 5150
+F 0 "#PWR?" H 2700 4900 50  0001 C CNN
+F 1 "GND" H 2705 4977 50  0000 C CNN
+F 2 "" H 2700 5150 50  0001 C CNN
+F 3 "" H 2700 5150 50  0001 C CNN
+	1    2700 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61CF0DCE
+P 3750 5150
+F 0 "#PWR?" H 3750 4900 50  0001 C CNN
+F 1 "GND" H 3755 4977 50  0000 C CNN
+F 2 "" H 3750 5150 50  0001 C CNN
+F 3 "" H 3750 5150 50  0001 C CNN
+	1    3750 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3350 2700 3550
+Connection ~ 2700 3550
+Wire Wire Line
+	2700 3550 2700 3850
+Connection ~ 2700 3850
+Wire Wire Line
+	2700 3850 2700 4250
+Connection ~ 2700 4250
+Wire Wire Line
+	2700 4250 2700 4650
+Connection ~ 2700 4650
+Wire Wire Line
+	2700 4650 2700 5100
+Wire Wire Line
+	3450 4650 3750 4650
+Wire Wire Line
+	3750 4650 3750 5100
+Wire Wire Line
+	3750 4250 3750 4650
+Connection ~ 3750 4650
+Wire Wire Line
+	2700 3250 2700 3350
+Connection ~ 2700 3350
+Wire Wire Line
+	3450 3050 3750 3050
+Wire Wire Line
+	3750 3050 3750 3350
+Connection ~ 3750 4250
+Wire Wire Line
+	3450 3350 3750 3350
+Connection ~ 3750 3350
+Wire Wire Line
+	3750 3350 3750 3450
+Wire Wire Line
+	3450 3450 3750 3450
+Connection ~ 3750 3450
+Wire Wire Line
+	3750 3450 3750 3550
+Wire Wire Line
+	3450 3550 3750 3550
+Connection ~ 3750 3550
+Text GLabel 2450 3050 0    50   Input ~ 0
+VSUP1
+Text GLabel 2450 3150 0    50   Input ~ 0
+VSUP2
+Text GLabel 3850 3150 2    50   Input ~ 0
+VSUP3-probably3v3stabilised
+Wire Wire Line
+	3450 3150 3850 3150
+Text GLabel 3850 3250 2    50   Input ~ 0
+VSUP4-5VINPUTFORREGULATORONPCB_ANDBRIDGEDRIVERSVDD
+Wire Wire Line
+	3450 3250 3850 3250
+Text GLabel 2450 3450 0    50   Input ~ 0
+VACGRID-ISOLATED
+$Comp
+L Device:R R?
+U 1 1 61CF7338
+P 2300 4750
+F 0 "R?" V 2300 4500 50  0000 C CNN
+F 1 "0" V 2300 4750 50  0000 C CNN
+F 2 "" V 2230 4750 50  0001 C CNN
+F 3 "~" H 2300 4750 50  0001 C CNN
+	1    2300 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61CF7979
+P 2300 4850
+F 0 "R?" V 2300 4600 50  0000 C CNN
+F 1 "0" V 2300 4850 50  0000 C CNN
+F 2 "" V 2230 4850 50  0001 C CNN
+F 3 "~" H 2300 4850 50  0001 C CNN
+	1    2300 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61CF7FF0
+P 2300 4950
+F 0 "R?" V 2300 4700 50  0000 C CNN
+F 1 "0" V 2300 4950 50  0000 C CNN
+F 2 "" V 2230 4950 50  0001 C CNN
+F 3 "~" H 2300 4950 50  0001 C CNN
+	1    2300 4950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 61CF8275
+P 3950 4850
+F 0 "R?" V 3950 5100 50  0000 C CNN
+F 1 "0" V 3950 4850 50  0000 C CNN
+F 2 "" V 3880 4850 50  0001 C CNN
+F 3 "~" H 3950 4850 50  0001 C CNN
+	1    3950 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3800 4850 3450 4850
+Wire Wire Line
+	2150 4750 2150 4850
+Wire Wire Line
+	2150 5100 2700 5100
+Connection ~ 2150 4850
+Wire Wire Line
+	2150 4850 2150 4950
+Connection ~ 2150 4950
+Wire Wire Line
+	2150 4950 2150 5100
+Connection ~ 2700 5100
+Wire Wire Line
+	2700 5100 2700 5150
+Wire Wire Line
+	2450 4950 2950 4950
+Wire Wire Line
+	4100 4850 4100 5100
+Wire Wire Line
+	4100 5100 3750 5100
+Connection ~ 3750 5100
+Wire Wire Line
+	3750 5100 3750 5150
+$Comp
+L Device:R R?
+U 1 1 61CFB890
+P 3950 3950
+F 0 "R?" V 3950 4200 50  0000 C CNN
+F 1 "0" V 3950 3950 50  0000 C CNN
+F 2 "" V 3880 3950 50  0001 C CNN
+F 3 "~" H 3950 3950 50  0001 C CNN
+	1    3950 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4100 3950 4100 4100
+Wire Wire Line
+	4100 4100 3750 4100
+Connection ~ 3750 4100
+Wire Wire Line
+	3750 4100 3750 4250
+Text GLabel 2450 3650 0    50   Input ~ 0
+BridgeH0_HIN
+Text GLabel 3850 3650 2    50   Input ~ 0
+BRIDGEL0_LIN
+Wire Wire Line
+	3450 3650 3850 3650
+Text GLabel 2450 3750 0    50   Input ~ 0
+BRIDGEH1_HIN
+Text GLabel 3850 3750 2    50   Input ~ 0
+BRIDGEL1_LIN
+Text GLabel 3850 3850 2    50   Input ~ 0
+VSUP4
+Wire Wire Line
+	2950 4650 2700 4650
+Wire Wire Line
+	2450 4750 2950 4750
+Wire Wire Line
+	2950 3050 2450 3050
+Wire Wire Line
+	2450 3150 2950 3150
+Wire Wire Line
+	2950 3250 2700 3250
+Wire Wire Line
+	2950 3350 2700 3350
+Wire Wire Line
+	2450 3450 2950 3450
+Wire Wire Line
+	2950 3550 2700 3550
+Wire Wire Line
+	2450 3650 2950 3650
+Wire Wire Line
+	2950 3850 2700 3850
+Wire Wire Line
+	2950 4850 2450 4850
+Wire Wire Line
+	3750 3550 3750 4100
+Wire Wire Line
+	2950 4250 2700 4250
+Wire Wire Line
+	3450 3750 3850 3750
+Wire Wire Line
+	3450 4250 3750 4250
+Wire Wire Line
+	3450 3850 3850 3850
+Wire Wire Line
+	2950 3750 2450 3750
+Text GLabel 2450 4050 0    50   Input ~ 0
+GRIDRELAY0
+Text GLabel 3850 4150 2    50   Input ~ 0
+GRIDRELAY1
+$Comp
+L Connector_Generic:Conn_02x20_Odd_Even J?
+U 1 1 61CED21B
+P 3150 3950
+F 0 "J?" H 3200 5067 50  0000 C CNN
+F 1 "Conn_02x20_Odd_Even" H 3200 4976 50  0000 C CNN
+F 2 "" H 3150 3950 50  0001 C CNN
+F 3 "~" H 3150 3950 50  0001 C CNN
+	1    3150 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3450 4150 3850 4150
+Wire Wire Line
+	2950 4050 2450 4050
+Text GLabel 2450 3950 0    50   Input ~ 0
+BRIDGES_SHUTDOWN
+Wire Wire Line
+	2450 3950 2950 3950
+Wire Wire Line
+	3450 3950 3800 3950
+Text GLabel 3850 4050 2    50   Input ~ 0
+RELAY0_CHECK
+Wire Wire Line
+	3450 4050 3850 4050
+Wire Wire Line
+	2950 4150 2450 4150
+Text GLabel 2450 4150 0    50   Input ~ 0
+RELAY1_CHECK
+Wire Wire Line
+	3450 4350 3850 4350
+Text GLabel 3850 4350 2    50   Input ~ 0
+230V-3.13V-TRAFO
+Text GLabel 2450 4350 0    50   Input ~ 0
+CURRENT_SENSOR
+Wire Wire Line
+	2450 4350 2950 4350
+Text Notes 1250 4400 0    50   ~ 0
+15A is 2.5V
+Text GLabel 2450 4450 0    50   Input ~ 0
+TEMPERATURE_HEATSINK
+Wire Wire Line
+	2950 4450 2450 4450
+Text GLabel 3850 4450 2    50   Input ~ 0
+VDC_BUS
+Wire Wire Line
+	3850 4450 3450 4450
+Text GLabel 2450 4550 0    50   Input ~ 0
+PROBABLY_VARISTORCHECK
+Wire Wire Line
+	2450 4550 2950 4550
+$Comp
+L Device:R R?
+U 1 1 61D201A2
+P 3950 4750
+F 0 "R?" V 3950 5000 50  0000 C CNN
+F 1 "500R" V 3950 4750 50  0000 C CNN
+F 2 "" V 3880 4750 50  0001 C CNN
+F 3 "~" H 3950 4750 50  0001 C CNN
+	1    3950 4750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3800 4750 3450 4750
+Text GLabel 4350 4750 2    50   Input ~ 0
+VSUP4
+Wire Wire Line
+	4100 4750 4350 4750
+$Comp
+L Device:R R?
+U 1 1 61D22FCD
+P 3700 4550
+F 0 "R?" V 3700 4800 50  0000 C CNN
+F 1 "100R" V 3700 4550 50  0000 C CNN
+F 2 "" V 3630 4550 50  0001 C CNN
+F 3 "~" H 3700 4550 50  0001 C CNN
+	1    3700 4550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3450 4550 3550 4550
+$Comp
+L Device:R R?
+U 1 1 61D24A54
+P 4600 4600
+F 0 "R?" V 4600 4850 50  0000 C CNN
+F 1 "4k7" V 4600 4600 50  0000 C CNN
+F 2 "" V 4530 4600 50  0001 C CNN
+F 3 "~" H 4600 4600 50  0001 C CNN
+	1    4600 4600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3850 4550 3850 4600
+Wire Wire Line
+	3850 4600 4300 4600
+$Comp
+L power:GND #PWR?
+U 1 1 61CCF00F
+P 4800 4700
+F 0 "#PWR?" H 4800 4450 50  0001 C CNN
+F 1 "GND" H 4805 4527 50  0000 C CNN
+F 2 "" H 4800 4700 50  0001 C CNN
+F 3 "" H 4800 4700 50  0001 C CNN
+	1    4800 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 4700 4800 4600
+Wire Wire Line
+	4750 4600 4800 4600
+Wire Wire Line
+	4300 4600 4300 4450
+Wire Wire Line
+	4300 4450 4500 4450
+Connection ~ 4300 4600
+Wire Wire Line
+	4300 4600 4450 4600
+Text GLabel 4500 4450 2    50   Input ~ 0
+Disappears_into_middle_Layer
+$EndSCHEMATC
