@@ -482,8 +482,6 @@ F 3 "" H 3950 2900 50  0001 C CNN
 	1    3950 2900
 	1    0    0    -1  
 $EndComp
-Text Notes 6400 3550 0    50   ~ 0
-Relay0
 Text Notes 6400 1350 0    50   ~ 0
 RELAY1
 Text Notes 7300 3550 0    50   ~ 0
