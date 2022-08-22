@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name SB_LOGICBOARD_V01-eagle-import)(type Legacy)(uri ${KIPRJMOD}/SB_LOGICBOARD_V01-eagle-import.lib)(options "")(descr ""))
+)
