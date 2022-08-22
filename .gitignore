@@ -60,3 +60,6 @@ fp-info-cache
 code/solarInv/Debug/**
 code/solarInv/Release/**
 
+simulations/*.raw
+simulations/*.log
+simulations/*.fft
