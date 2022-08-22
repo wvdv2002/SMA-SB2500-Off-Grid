@@ -56,3 +56,7 @@ fp-info-cache
 *.out
 *.app
 
+
+code/solarInv/Debug/**
+code/solarInv/Release/**
+
