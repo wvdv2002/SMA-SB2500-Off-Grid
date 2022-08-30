@@ -56,6 +56,7 @@ void startCommandThread(void const * argument){
 //	__HAL_UART_CLEAR_IDLEFLAG(&huart1);
 	__HAL_UART_ENABLE_IT(&huart1,UART_IT_IDLE);
 	__HAL_UART_ENABLE_IT(&huart1,UART_IT_ERR);
+
 	lastDataReceived = HAL_GetTick();
 	HAL_UART_Receive_DMA(&huart1,UART_DMA_RX_BUFFER,UART_RX_BUFFER_SIZE);
 
@@ -147,18 +148,26 @@ void lcdTask(void){
 
 void ledTask(void){
 	static TickType_t lastLedUpdate = 0;
+	static bool lastGreenLedState = 0;
+	static bool lastRedLedState = 0;
 	//! definition of when a led table ends
 	if ((HAL_GetTick()-lastLedUpdate)>250){
-		if (HAL_GPIO_ReadPin(LCD_SWA_GPIO_Port, LCD_SWA_Pin)){
-			led_set_mode(&led_table[1], led_mode_blink_fast);
-		}else{
-			led_set_mode(&led_table[1], led_mode_blink_slow);
+		if (lastGreenLedState != HAL_GPIO_ReadPin(LCD_SWA_GPIO_Port, LCD_SWA_Pin)){
+			lastGreenLedState = !lastGreenLedState;
+			if (lastGreenLedState){
+				led_set_mode(&led_table[1], led_mode_blink_fast);
+			}else{
+				led_set_mode(&led_table[1], led_mode_blink_slow);
+			}
 		}
 
-		if (HAL_GPIO_ReadPin(LCD_SWB_GPIO_Port, LCD_SWB_Pin)){
-			led_set_mode(&led_table[2], led_mode_SOS);
-		}else {
-			led_set_mode(&led_table[2], led_mode_on);
+		if (lastRedLedState != HAL_GPIO_ReadPin(LCD_SWB_GPIO_Port, LCD_SWB_Pin)){
+			lastRedLedState = !lastRedLedState;
+			if(lastRedLedState){
+				led_set_mode(&led_table[2], led_mode_SOS);
+			}else {
+				led_set_mode(&led_table[2], led_mode_on);
+			}
 		}
 		lastLedUpdate=HAL_GetTick();
 		led_group_update(led_table);

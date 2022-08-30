@@ -36,6 +36,7 @@ void calculateTemperature(void);
 TM_FILTER_FIR_F32_t* currentFIR;
 TM_FILTER_FIR_F32_t* uCapFIR;
 extern TIM_HandleTypeDef htim4;
+extern TIM_HandleTypeDef htim2;
 
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 #define max(a, b) (((a) > (b)) ? (a) : (b))
@@ -61,7 +62,10 @@ void controlLoop(void){
 		setDutyCycle(0.0);
 		break;
 	case CONTROL_WAITFOR_SAFESTART:
+		HAL_GPIO_WritePin(BRIDGES_SHUTDOWN_GPIO_Port, BRIDGES_SHUTDOWN_Pin, 0);
 		systemState.controlState.controlTaskState = CONTROL_RUNNING;
+		__HAL_TIM_SetCounter(&htim2,0);
+		HAL_TIM_Base_Start(&htim2);
 		break;
 
 	case CONTROL_RUNNING:
@@ -73,7 +77,7 @@ void controlLoop(void){
 		break;
 
 	case CONTROL_STOPANDRESET:
-		setDutyCycle(0.5);
+		setDutyCycle(0.0);
 		break;
 
 	case CONTROL_SAFETY:
@@ -190,9 +194,9 @@ auxInputs.TEMPERATURE = 16.0f; //adcToCelsius();
 }
 
 void calculateState(void){
-		float now = HAL_GetTick();
-		systemState.controlState.U12 = setPoint.voltage*1.41f*arm_sin_f32(50.0f*6.28f/1000.0f*now);
-		systemState.controlState.dutyCycle = systemState.controlState.U12/systemState.inputs.VDCBUS;
+		uint32_t tick = __HAL_TIM_GET_COUNTER(&htim2);
+		systemState.controlState.U12 = setPoint.voltage*1.41f*arm_sin_f32(50.0f*6.28f/16000.0f*tick);
+		systemState.controlState.dutyCycle = systemState.controlState.U12/100;
 }
 
 void setDutyCycle(float dutyCycle){
@@ -301,13 +305,19 @@ void setupControlLoop(void){
 	HAL_ADC_Start_DMA(&hadc1,(uint32_t*) adc1Results,ADC1_CHANNELS*FILTERDEPTH);
 	HAL_ADC_Start_DMA(&hadc2,(uint32_t*) adc2Results,ADC2_CHANNELS*FILTERDEPTH);
 	HAL_ADC_Start_DMA(&hadc3,(uint32_t*) adc3Results,ADC3_CHANNELS*FILTERDEPTH);
-	hdma_adc1.Instance->CR &= ~((uint32_t) DMA_SxCR_HTIE);
-	hdma_adc2.Instance->CR &= ~((uint32_t) DMA_SxCR_TCIE);
-	hdma_adc3.Instance->CR &= ~((uint32_t) DMA_SxCR_TCIE);
-	hdma_adc1.Instance->CR &= ~((uint32_t) DMA_SxCR_HTIE);
+	hdma_adc1.Instance->CR &= ~((uint32_t) DMA_SxCR_HTIE); //Half transfer interrupt disable
 	hdma_adc2.Instance->CR &= ~((uint32_t) DMA_SxCR_HTIE);
+	hdma_adc3.Instance->CR &= ~((uint32_t) DMA_SxCR_HTIE);
+
+	hdma_adc1.Instance->CR &= ~((uint32_t) DMA_SxCR_TCIE); //full transfer interrupt disable
+	hdma_adc2.Instance->CR &= ~((uint32_t) DMA_SxCR_TCIE);
+
 	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
 	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
+
+
 	htim1.Instance->CCMR1 |= (uint32_t) TIM_CCMR1_OC1PE;
 	htim1.Instance->CCMR1 |= (uint32_t) TIM_CCMR1_OC1M;
 	HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_1);
