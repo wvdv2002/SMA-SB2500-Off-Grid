@@ -41,7 +41,7 @@ The datasheets folder contains datasheets of most of the electronic parts in the
 
 # Interesting links
 * [Arduino based grid tie inverter repo](https://github.com/MartinStokroos/openMicroInverter)
-* [Pic based grid tie inverter repo](https://github.com/rajeshfarswan/UDQ-GRID-1P
+* [Pic based grid tie inverter repo](https://github.com/rajeshfarswan/UDQ-GRID-1P)
 * [STM based grid tie inverter repo](https://github.com/fotherja/Grid_Tie_Inverter)
 * [STM based grid tie inverter 2 repo](https://github.com/fotherja/Grid_Tie_Inverter_2)
 * [TIVA-C based grid tie inverter](https://github.com/srpoyrek/NIVAS)
