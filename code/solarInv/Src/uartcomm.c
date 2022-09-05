@@ -27,6 +27,7 @@ static unsigned char UART_DMA_RX_BUFFER[UART_RX_BUFFER_SIZE];
 osSemaphoreId controlUartNewDataFlag_id;     // message queue id
 uint32_t rxBufferReadPointer = 0;
 static TickType_t lastDataReceived;
+extern
 
 LED led_table[] = {
 	{{LED_HEARTBEAT_GPIO_Port,LED_HEARTBEAT_Pin},led_mode_heartbeat,0},
@@ -62,8 +63,9 @@ void startCommandThread(void const * argument){
 
 	TM_HD44780_Init(16, 2);
 	TM_HD44780_Puts(0, 0, "Hello World");
-	TM_HD44780_BlinkOn();
-
+	TM_HD44780_BlinkOff();
+	HAL_GPIO_WritePin(RS485_RXENA_GPIO_Port, RS485_RXENA_Pin, 0);
+	HAL_GPIO_WritePin(RS485_TXENA_GPIO_Port, RS485_TXENA_Pin, 1);
 	for (;;){
 	 	dataReceived = osSemaphoreWait(controlUartNewDataFlag_id,0);
 	 	if(dataReceived){
@@ -140,9 +142,12 @@ void lcdTask(void){
 	TickType_t now = HAL_GetTick();
 	if ((now-lastLCDUpdate)>1000){
 		lastLCDUpdate = now;
-		char time[14];
-		itoa(now/1000,time,10);
-		TM_HD44780_Puts(0, 1, time);
+		char info[25];
+		sprintf(info,"%i B:%1.0f V:%1.0f   ",getCopyControlState()->controlState.controlTaskState,getCopyControlState()->inputs.VDCBUS,getSetPoint()->voltage);
+		TM_HD44780_Puts(0, 0, info);
+		sprintf(info,"D:%i   ",getSetPoint()->deadTime);
+		TM_HD44780_Puts(0, 1, info);
+
 	}
 }
 

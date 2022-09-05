@@ -516,7 +516,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 10500;
+  htim2.Init.Prescaler = 5250;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 16000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -608,7 +608,7 @@ static void MX_USART1_UART_Init(void)
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
   huart1.Init.Mode = UART_MODE_TX_RX;
-  huart1.Init.HwFlowCtl = UART_HWCONTROL_RTS;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
   if (HAL_UART_Init(&huart1) != HAL_OK)
   {
@@ -732,7 +732,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(BRIDGES_SHUTDOWN_GPIO_Port, BRIDGES_SHUTDOWN_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, IO_OUT1_Pin|IO_OUT0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, IO_OUT1_Pin|IO_OUT0_Pin|RS485_TXENA_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : GRIDRELAY_1_Pin GRIDRELAY_0_Pin LED_HEARTBEAT_Pin LCD_RW_Pin
                            LCD_BACKL_Pin LCD_D7_Pin LCD_D6_Pin LCD_D4_Pin */
@@ -771,8 +771,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(LCD_SWB_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : IO_OUT1_Pin IO_OUT0_Pin */
-  GPIO_InitStruct.Pin = IO_OUT1_Pin|IO_OUT0_Pin;
+  /*Configure GPIO pins : IO_OUT1_Pin IO_OUT0_Pin RS485_TXENA_Pin */
+  GPIO_InitStruct.Pin = IO_OUT1_Pin|IO_OUT0_Pin|RS485_TXENA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
