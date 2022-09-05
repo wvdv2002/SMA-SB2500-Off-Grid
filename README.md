@@ -30,13 +30,15 @@ The datasheets folder contains datasheets of most of the electronic parts in the
 # Already done
 * Basic pinout of the logic board connection in Kicad
 * Basic layout of the power board important parts in Kicad
-
-
-# TODO
+* Design new logic board 
 * Check if pinout is correct by measuring the voltages on the logic board connector 
 * Check all voltage ranges of the voltage measurements on the logic board connector
+* Written basic control software
+* Light a lightbulb using AC voltage of 100vac at the output of the inverter.
+
+# TODO
 * Try to reprogram logic board
-* Or design new logic board
+
 
 
 # Interesting links
