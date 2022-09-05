@@ -87,6 +87,10 @@ typedef struct {
 	float freq;
 	float voltage;
 	float fbR;
+	float vbusMin;
+	float vbusMax;
+	float iMax;
+	uint8_t deadTime;
 }solarSetPoints_t;
 
 typedef struct {

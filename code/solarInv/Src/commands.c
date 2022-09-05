@@ -171,8 +171,13 @@ void commands_process_packet(unsigned char *data, unsigned int len) {
 		break;
 
 	case COMM_SET_SETPOINTS:
+		memset(&aSetPoint,0,sizeof(solarSetPoints_t));
 		aSetPoint.voltage = buffer_get_float32(data,10,&ind);
-		aSetPoint.freq = buffer_get_float32(data,10,&ind);
+		aSetPoint.freq = buffer_get_float32(data,100,&ind);
+		aSetPoint.deadTime = buffer_get_float32(data,1,&ind);
+		aSetPoint.vbusMin = buffer_get_float32(data,1,&ind);
+		aSetPoint.vbusMax = buffer_get_float32(data,1,&ind);
+		aSetPoint.iMax = buffer_get_float32(data,10,&ind);
 		controlSetSetPoints(&aSetPoint);
 		break;
 
@@ -182,7 +187,11 @@ void commands_process_packet(unsigned char *data, unsigned int len) {
 		send_buffer[ind++] = COMM_GET_SETPOINTS;
 		memcpy(&aSetPoint,getSetPoint(),sizeof(solarSetPoints_t));
 		buffer_append_float32(send_buffer,aSetPoint.voltage,10,&ind);
-		buffer_append_float32(send_buffer,aSetPoint.freq,10,&ind);
+		buffer_append_float32(send_buffer,aSetPoint.freq,100,&ind);
+		buffer_append_float32(send_buffer,aSetPoint.deadTime,1,&ind);
+		buffer_append_float32(send_buffer,aSetPoint.vbusMin,1,&ind);
+		buffer_append_float32(send_buffer,aSetPoint.vbusMax,1,&ind);
+		buffer_append_float32(send_buffer,aSetPoint.iMax,10,&ind);
 		commands_send_packet(send_buffer,ind);
 		break;
 

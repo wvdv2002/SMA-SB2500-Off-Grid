@@ -29,6 +29,7 @@ PID_t capacitorPid;
 bool updateControl = false;
 bool updateSetPoint = false;
 uint32_t closeRelayTime=0;
+float voutNow= 0.0;
 
 void calculateTemperature(void);
 
@@ -49,6 +50,7 @@ void controlLoop(void){
 //		pidSetTunings(&capacitorPid,setPoint.UCapP,setPoint.UCapI,setPoint.UCapD,P_ON_E);
 //		auxInputs.Vpp = syncCalculateVpp();
 		updateSetPoint = false;
+		htim1.Instance->BDTR = (htim1.Instance->BDTR & 0xFFFFFF00) | setPoint.deadTime;
 	}
 	calculateInputs();
 	calculateFilters();
@@ -63,6 +65,7 @@ void controlLoop(void){
 		break;
 	case CONTROL_WAITFOR_SAFESTART:
 		HAL_GPIO_WritePin(BRIDGES_SHUTDOWN_GPIO_Port, BRIDGES_SHUTDOWN_Pin, 0);
+		voutNow = 0.0;
 		systemState.controlState.controlTaskState = CONTROL_RUNNING;
 		__HAL_TIM_SetCounter(&htim2,0);
 		HAL_TIM_Base_Start(&htim2);
@@ -113,7 +116,19 @@ void controlLoop(void){
 		systemState.controlState.controlTaskState = CONTROL_IDLE;
 	}
 
-//	HAL_GPIO_WritePin(TEST_PIN_GPIO_Port, TEST_PIN_Pin, GPIO_PIN_RESET);
+	if (systemState.inputs.VDCBUS < setPoint.vbusMin){
+		setDutyCycle(0.0);
+		HAL_GPIO_WritePin(BRIDGES_SHUTDOWN_GPIO_Port, BRIDGES_SHUTDOWN_Pin, 1);
+		systemState.controlState.controlTaskState = CONTROL_SAFETY;
+	}
+
+	if (systemState.inputs.VDCBUS > setPoint.vbusMax){
+		setDutyCycle(0.0);
+		HAL_GPIO_WritePin(BRIDGES_SHUTDOWN_GPIO_Port, BRIDGES_SHUTDOWN_Pin, 1);
+		systemState.controlState.controlTaskState = CONTROL_SAFETY;
+	}
+
+	//	HAL_GPIO_WritePin(TEST_PIN_GPIO_Port, TEST_PIN_Pin, GPIO_PIN_RESET);
 }
 
 
@@ -173,7 +188,15 @@ void calculateFilters(void){
 //			pidCompute(&capacitorPid);
 			break;
 		case 3:
+		{
+			float voutDiff = setPoint.voltage - voutNow;
+			if (fabsf(voutDiff)>1.0f){
+				voutNow += voutDiff/500;
+			}else{
+				voutNow = setPoint.voltage;
+			}
 			break;
+		}
 		default:
 			if(filterState >9){
 				filterState = 0;
@@ -195,8 +218,10 @@ auxInputs.TEMPERATURE = 16.0f; //adcToCelsius();
 
 void calculateState(void){
 		uint32_t tick = __HAL_TIM_GET_COUNTER(&htim2);
-		systemState.controlState.U12 = setPoint.voltage*1.41f*arm_sin_f32(50.0f*6.28f/16000.0f*tick);
-		systemState.controlState.dutyCycle = systemState.controlState.U12/100;
+		float vBus = fmaxf(systemState.inputs.VDCBUS,10.0f);
+		float maxVolt = fminf(voutNow,vBus);
+		systemState.controlState.U12 = maxVolt*arm_sin_f32(50.0f*6.28f/16000.0f*tick);
+		systemState.controlState.dutyCycle = systemState.controlState.U12/vBus;
 }
 
 void setDutyCycle(float dutyCycle){
@@ -273,8 +298,12 @@ void controlSetFBR(float FB){
 }
 
 void controlInit(void){
-	setPoint.voltage = 50;
+	setPoint.voltage = 0.0;
 	setPoint.freq = 50.0;
+	setPoint.vbusMax = 400.0;
+	setPoint.vbusMin = 100.0;
+	setPoint.iMax = 5.0;
+	setPoint.deadTime = 20;
 //	currentFIR = TM_FILTER_FIR_F32_Init(currentFilterCoefSize,currentFilterCoef,NULL,1);
 //	currentFIR = TM_FILTER_FIR_F32_Init(uCapFilterCoeffSize,uCapFilterCoeffFloat,NULL,1);
 //	uCapFIR = TM_FILTER_FIR_F32_Init(uCapFilterCoeffSize,uCapFilterCoeffFloat,NULL,1);
@@ -317,7 +346,7 @@ void setupControlLoop(void){
 	HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_3);
 	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
 
-
+	htim1.Instance->BDTR = (htim1.Instance->BDTR & 0xFFFFFF00) | setPoint.deadTime;
 	htim1.Instance->CCMR1 |= (uint32_t) TIM_CCMR1_OC1PE;
 	htim1.Instance->CCMR1 |= (uint32_t) TIM_CCMR1_OC1M;
 	HAL_TIM_OC_Start(&htim1, TIM_CHANNEL_1);
